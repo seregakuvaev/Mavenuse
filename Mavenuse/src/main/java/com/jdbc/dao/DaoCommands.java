@@ -5,9 +5,12 @@ import com.jdbc.util.Util;
 
 import java.sql.*;
 import java.util.ArrayList;
-
+//не создавать везде новые объекты Утил, зачем так делать
+//добавить метод, который будет очищать таблицу
+//добавить метод, который будет закрывать соединение
+//реализовать один коннекшн на всю программу и не плодить новые Утил
 public class DaoCommands implements Dao {
-
+    //поле с объектом утил
     @Override
     public void add(String name) {
         try (Connection connection = new Util().connection) {
@@ -28,6 +31,8 @@ public class DaoCommands implements Dao {
             throw new RuntimeException(e);
         }
     }
+
+
 
     @Override
     public void delete(String name) {
@@ -56,7 +61,8 @@ public class DaoCommands implements Dao {
             connection.setAutoCommit(false);
             try {
                 String createTable = "CREATE TABLE IF NOT EXISTS users( id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(50) NOT NULL)";
-                PreparedStatement preparedStatement = connection.prepareStatement(createTable);
+                PreparedStatement preparedStatement = connection.prepareStatement(
+                        "CREATE TABLE IF NOT EXISTS users( id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(50) NOT NULL)");
                 preparedStatement.executeUpdate();
                 connection.commit();
                 connection.setAutoCommit(true);

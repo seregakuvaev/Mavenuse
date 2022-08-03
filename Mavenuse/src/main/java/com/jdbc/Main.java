@@ -15,6 +15,7 @@ public class Main {
         }
         s.delUser(names[0]);
         for (User u: s.getname()){
+            System.out.println(u);
             u.printUser();
         }
 

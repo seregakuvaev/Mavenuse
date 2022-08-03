@@ -3,7 +3,7 @@ package com.jdbc.service;
 import com.jdbc.model.User;
 
 import java.util.ArrayList;
-
+//модификаторы
 public interface ServiceInterface {
 
     void newTable();
