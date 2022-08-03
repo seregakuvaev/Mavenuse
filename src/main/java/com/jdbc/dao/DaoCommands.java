@@ -43,7 +43,7 @@ public class DaoCommands implements Dao {
             } catch (SQLException e) {
                 connection.rollback();
                 connection.setAutoCommit(true);
-                throw e;
+                throw new RuntimeException(e);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
