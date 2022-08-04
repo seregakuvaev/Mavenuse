@@ -1,7 +1,5 @@
 package com.jdbc.model;
 
-//имя юзера должно называться name
-
 public class User {
     private final String name;
 
@@ -9,8 +7,9 @@ public class User {
         this.name = user;
     }
 
+    @Override
     public String toString() {
-        return name;
+        return "User {name: " + name + "}";
     }
 
 }
