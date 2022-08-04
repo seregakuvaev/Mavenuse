@@ -16,4 +16,8 @@ public interface Dao {
 
     void deleteTable();
 
+    void closeConnection();
+
+    void clearTable();
+
 }

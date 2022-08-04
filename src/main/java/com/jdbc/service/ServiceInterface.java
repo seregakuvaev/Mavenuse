@@ -16,4 +16,8 @@ public interface ServiceInterface {
 
     void dropTable();
 
+    void clearUsers();
+
+    void connectionClose();
+
 }

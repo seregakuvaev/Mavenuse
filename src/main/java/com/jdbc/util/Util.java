@@ -6,13 +6,20 @@ import java.sql.SQLException;
 
 public class Util {
 
-    public Connection connection;
+    private Connection connection;
 
     public Util() {
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test1", "root", "root");
+            String user = "root";
+            String password = "root";
+            String url = "jdbc:mysql://localhost:3306/test1";
+            connection = DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
+    }
+
+    public Connection getCon(){
+        return connection;
     }
 }

@@ -24,4 +24,9 @@ public class ServiceRealize implements ServiceInterface {
     @Override
     public void dropTable() {dao.deleteTable();}
 
+    @Override
+    public void clearUsers() {dao.clearTable();}
+
+    @Override
+    public void connectionClose() {dao.closeConnection();}
 }

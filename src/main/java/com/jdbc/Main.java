@@ -14,11 +14,21 @@ public class Main {
             s.addUser(name);
         }
         s.delUser(names[0]);
-        for (User u: s.getname()){
-            u.printUser();
+
+        //проверяем добавление и удаление отдельного юзера
+        for (User u : s.getname()) {
+            System.out.println(u.getUser());
+        }
+
+        s.clearUsers();
+
+        //получаем 0 юзеров тк таблица пуста
+        for (User u : s.getname()) {
+            System.out.println("user " + u.getUser());
         }
 
         s.dropTable();
+        s.connectionClose();
     }
 }
 
