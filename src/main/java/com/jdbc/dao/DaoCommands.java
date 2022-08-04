@@ -113,7 +113,7 @@ public class DaoCommands implements Dao {
         }
     }
 
-    @Override
+    @Override  //это делается одной скл командой вообще то
     public void clearTable() {
         ArrayList<User> list = getResult();
         for (User i : list) {

@@ -1,5 +1,7 @@
 package com.jdbc.model;
 
+//имя юзера должно называться name
+
 public class User {
     private final String user;
 
