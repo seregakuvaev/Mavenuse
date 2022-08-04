@@ -1,13 +1,13 @@
 package com.jdbc.service;
 
-import com.jdbc.dao.DaoCommands;
+import com.jdbc.dao.DaoImpl;
 import com.jdbc.model.User;
 
 import java.util.ArrayList;
 
-public class ServiceRealize implements ServiceInterface {
+public class ServiceImpl implements ServiceInterface {
 
-    DaoCommands dao = new DaoCommands();
+    DaoImpl dao = new DaoImpl();
 
     @Override
     public void newTable() {dao.createTable();}

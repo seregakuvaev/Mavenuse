@@ -3,13 +3,14 @@ package com.jdbc.model;
 //имя юзера должно называться name
 
 public class User {
-    private final String user;
+    private final String name;
 
     public User(String user) {
-        this.user = user;
+        this.name = user;
     }
 
-    public String getUser() {
-        return user;
+    public String toString() {
+        return name;
     }
+
 }

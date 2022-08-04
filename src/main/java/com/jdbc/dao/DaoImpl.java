@@ -6,7 +6,7 @@ import com.jdbc.util.Util;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class DaoCommands implements Dao {
+public class DaoImpl implements Dao {
 
     Connection connection = new Util().getCon();
 
@@ -115,9 +115,18 @@ public class DaoCommands implements Dao {
 
     @Override  //это делается одной скл командой вообще то
     public void clearTable() {
-        ArrayList<User> list = getResult();
-        for (User i : list) {
-            delete(i.getUser());
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(
+                    "TRUNCATE users");
+            preparedStatement.executeUpdate();
+            connection.commit();
+        } catch (SQLException e) {
+            try {
+                connection.rollback();
+            } catch (SQLException ee) {
+                ee.printStackTrace();
+            }
+            e.printStackTrace();
         }
     }
 }
