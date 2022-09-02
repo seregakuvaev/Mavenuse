@@ -32,41 +32,32 @@ public class Main {
         //s.dropTable();
         //s.connectionClose();
 
-        HiberDao hiberDao = new HiberDao();
+        ServiceImpl service = new ServiceImpl();
 
-        hiberDao.createTable();
 
-        //hiberDao.add(names[0]);
-//        hiberDao.add(names[1]);
-//        hiberDao.add(names[2]);
-//        hiberDao.add(names[3]);
-//        hiberDao.add(names[4]);
-//        hiberDao.add(names[5]);
-//        System.out.println("-------------");
-//        System.out.println(hiberDao.getResult());
-//        System.out.println("-------------");
-//        hiberDao.delete(names[0]);
-//        System.out.println("-------------");
-//        System.out.println(hiberDao.getResult());
-//        System.out.println("-------------");
-//        hiberDao.clearTable();
-//        System.out.println("-------------");
-//        System.out.println(hiberDao.getResult());
-//        System.out.println("-------------");
+        service.newTable();
 
-//        hiberDao.clearTable();
-        //System.out.println(hiberDao.getResult());
-        //hiberDao.add(names[2]);
-        //UtilHiber utilHiber = new UtilHiber();
-        //utilHiber.getSessionFactory().openSession().persist(new User(names[0]));
-        //for (String name : names) {
-        //    hiberDao.add(name);
-        //}
-        //hiberDao.delete(names[0]);
-        //hiberDao.delete("data1");
-        //for (User username : hiberDao.getResult()) {
-        //    System.out.println(username);
-        //}
+        service.addUser(names[0]);
+        service.addUser(names[1]);
+        service.addUser(names[2]);
+        service.addUser(names[3]);
+        service.addUser(names[4]);
+        service.addUser(names[5]);
+        System.out.println("-------------");
+        System.out.println(service.getnames());
+        System.out.println("-------------");
+        service.delUser(names[0]);
+        System.out.println("-------------");
+        System.out.println(service.getnames());
+        System.out.println("-------------");
+        service.clearUsers();
+        System.out.println("-------------");
+        System.out.println(service.getnames());
+        System.out.println("-------------");
+
+        service.clearUsers();
+        System.out.println(service.getnames());
+        service.dropTable();
 
     }
 }

@@ -1,13 +1,14 @@
 package com.jdbc.service;
 
 import com.jdbc.dao.DaoImpl;
+import com.jdbc.dao.HiberDao;
 import com.jdbc.model.User;
 
 import java.util.ArrayList;
 
 public class ServiceImpl implements ServiceInterface {
 
-    DaoImpl dao = new DaoImpl();
+    HiberDao dao = new HiberDao();
 
     @Override
     public void newTable() {dao.createTable();}
@@ -16,7 +17,7 @@ public class ServiceImpl implements ServiceInterface {
     public void delUser(String user) {dao.delete(user);}
 
     @Override
-    public ArrayList<User> getname() {return dao.getResult();}
+    public ArrayList<User> getnames() {return dao.getResult();}
 
     @Override
     public void addUser(String user) {dao.add(user);}

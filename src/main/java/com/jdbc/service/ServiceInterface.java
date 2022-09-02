@@ -10,7 +10,7 @@ public interface ServiceInterface {
 
     void delUser(String user);
 
-    ArrayList<User> getname();
+    ArrayList<User> getnames();
 
     void addUser(String name);
 

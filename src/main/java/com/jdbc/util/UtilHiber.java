@@ -16,8 +16,6 @@ import java.util.Map;
 public class UtilHiber {
 
     private SessionFactory sessionFactory;
-    private Session session;
-    private Transaction transaction;
 
     public UtilHiber() {
         buildSessionFactory();
@@ -73,27 +71,8 @@ public class UtilHiber {
         }
     }
 
-    public Session openSession() {
-        return sessionFactory.openSession();
-    }
-
-    public Session openTransactionalSession() {
-        session = openSession();
-
-        //transaction = session.beginTransaction();
-        return session;
-    }
-
-    public void commitSession() {
-        transaction.commit();
-    }
-
     public Session getSession() {
-        return session;
-    }
-
-    public Transaction getTransaction() {
-        return transaction;
+        return sessionFactory.openSession();
     }
 
     public SessionFactory getSessionFactory() {
