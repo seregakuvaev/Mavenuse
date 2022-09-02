@@ -10,7 +10,6 @@ public class DaoImpl implements Dao {
 
     Connection connection = new Util().getCon();
 
-
     @Override
     public void add(String name) {
         try {

@@ -1,10 +1,25 @@
 package com.jdbc.model;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "users")
 public class User {
-    private final String name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "name")
+    private String name;
+
+    public User(){};
 
     public User(String user) {
         this.name = user;
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override

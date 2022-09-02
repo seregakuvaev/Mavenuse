@@ -19,7 +19,7 @@ public class Util {
         }
     }
 
-    public Connection getCon(){
+    public Connection getCon() {
         return connection;
     }
 }
